@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Meses Viajando Juntos ✈️ · Vuelo AMOR-6M</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gradient-background {
+      background: linear-gradient(180deg, rgba(186, 230, 253, 1) 0%, rgba(224, 242, 254, 1) 35%, rgba(209, 250, 229, 1) 70%, rgba(236, 253, 245, 1) 100%);
+      background-attachment: fixed;
+    }
+
+    .bounce2 {
+      animation: bounce2 2s ease infinite;
+    }
+
+    @keyframes bounce2 {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-20px);
+      }
+
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .drift {
+      top: var(--top, 15%);
+      animation: drift var(--dur, 24s) linear infinite;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateX(-20vw) scaleX(var(--fx, 1));
+      }
+
+      to {
+        transform: translateX(120vw) scaleX(var(--fx, 1));
+      }
+    }
+
+    .floaty {
+      animation: floaty var(--fdur, 5s) ease-in-out infinite;
+      animation-delay: var(--fdelay, 0s);
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 999px;
+      filter: blur(8px);
+    }
+
+    .twinkle {
+      animation: twinkle var(--tdur, 2.5s) ease-in-out infinite;
+      animation-delay: var(--tdelay, 0s);
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0.25;
+        transform: scale(0.85);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+
+    .stack-anim {
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+    }
+
+    .fly-away {
+      transform: translateY(-90px) rotate(-14deg) scale(0.9) !important;
+      opacity: 0 !important;
+    }
+
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(30px) scale(0.98);
+      transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-item.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .barcode {
+      background: repeating-linear-gradient(90deg,
+          #1f2937 0 2px, transparent 2px 4px,
+          #1f2937 4px 5px, transparent 5px 9px,
+          #1f2937 9px 11px, transparent 11px 12px,
+          #1f2937 12px 15px, transparent 15px 17px,
+          #1f2937 17px 18px, transparent 18px 22px);
+    }
+
+    .stamp {
+      transform: rotate(var(--r, 0deg)) scale(var(--s, 1));
+      opacity: var(--o, 0.65);
+      animation: stampSlam 0.25s ease-out both;
+    }
+
+    @keyframes stampSlam {
+      from {
+        transform: rotate(var(--r, 0deg)) scale(2.4);
+        opacity: 0;
+      }
+
+      to {
+        transform: rotate(var(--r, 0deg)) scale(var(--s, 1));
+        opacity: var(--o, 0.65);
+      }
+    }
+  </style>
+</head>
+
+<body class="gradient-background min-h-screen overflow-x-hidden">
+  <div id="bgLayer" class="pointer-events-none fixed inset-0 z-0 overflow-hidden select-none" aria-hidden="true">
+    <div class="cloud floaty" style="top:6%; left:18%; width:190px; height:46px; --fdur:9s;"></div>
+    <div class="cloud floaty" style="top:34%; left:72%; width:150px; height:38px; --fdur:11s; --fdelay:-4s;"></div>
+    <div class="cloud floaty" style="top:63%; left:12%; width:230px; height:52px; --fdur:12s; --fdelay:-7s;"></div>
+    <div class="cloud floaty" style="top:86%; left:62%; width:170px; height:42px; --fdur:10s; --fdelay:-2s;"></div>
+    <span class="absolute drift text-4xl" style="--top:8%; --dur:16s;">✈️</span>
+    <span class="absolute drift text-2xl" style="--top:16%; --dur:22s; --delay:-8s; --fx:-1;">🐦</span>
+    <span class="absolute drift text-3xl" style="--top:26%; --dur:28s; --delay:-14s;">🛩️</span>
+    <span class="absolute drift text-2xl" style="--top:34%; --dur:19s; --delay:-3s; --fx:-1;">🐦</span>
+    <span class="absolute drift text-2xl" style="--top:44%; --dur:23s; --delay:-10s;">🪁</span>
+    <span class="absolute drift text-xl" style="--top:47%; --dur:26s; --delay:-12s; --fx:-1;">🕊️</span>
+    <span class="absolute drift text-3xl" style="--top:56%; --dur:24s; --delay:-9s;">✈️</span>
+    <span class="absolute drift text-2xl" style="--top:64%; --dur:21s; --delay:-6s; --fx:-1;">🦋</span>
+    <span class="absolute drift text-2xl" style="--top:72%; --dur:29s; --delay:-15s;">🪶</span>
+    <span class="absolute drift text-3xl" style="--top:80%; --dur:27s; --delay:-5s;">🚁</span>
+    <span class="absolute drift text-2xl" style="--top:90%; --dur:35s; --delay:-20s; --fx:-1;">🛬</span>
+    <span class="absolute twinkle text-2xl" style="top:10%; left:10%; --tdur:2.6s;">✨</span>
+    <span class="absolute twinkle text-xl" style="top:24%; left:90%; --tdur:3.1s; --tdelay:-1s;">✨</span>
+    <span class="absolute twinkle text-2xl" style="top:50%; left:8%; --tdur:2.2s; --tdelay:-0.6s;">🌿</span>
+    <span class="absolute twinkle text-xl" style="top:66%; left:88%; --tdur:2.8s; --tdelay:-1.4s;">⭐</span>
+    <span class="absolute twinkle text-2xl" style="top:92%; left:12%; --tdur:2.4s; --tdelay:-1.8s;">✨</span>
+    <span class="absolute twinkle text-2xl" style="top:38%; left:96%; --tdur:3s; --tdelay:-2.2s;">🍃</span>
+    <span class="absolute floaty text-3xl" style="top:12%; left:6%; --fdur:5s; --fdelay:-1s;">🧳</span>
+    <span class="absolute floaty text-2xl" style="top:22%; left:88%; --fdur:6s; --fdelay:-2s;">🗺️</span>
+    <span class="absolute floaty text-3xl" style="top:40%; left:4%; --fdur:7s; --fdelay:-3s;">🌍</span>
+    <span class="absolute floaty text-2xl" style="top:55%; left:92%; --fdur:5.5s; --fdelay:-4s;">📸</span>
+    <span class="absolute floaty text-3xl" style="top:70%; left:8%; --fdur:6.5s; --fdelay:-2.5s;">🦙</span>
+    <span class="absolute floaty text-2xl" style="top:84%; left:86%; --fdur:5s; --fdelay:-1.5s;">🍋</span>
+    <span class="absolute floaty text-3xl" style="top:30%; left:10%; --fdur:8s; --fdelay:-5s;">🌴</span>
+    <span class="absolute floaty text-2xl" style="top:62%; left:6%; --fdur:6s; --fdelay:-3.5s;">☁️</span>
+    <span class="absolute floaty text-2xl" style="top:14%; left:92%; --fdur:7s; --fdelay:-4.5s;">⛰️</span>
+    <span class="absolute floaty text-2xl" style="top:46%; left:90%; --fdur:4.5s; --fdelay:-2s;">🎫</span>
+    <span class="absolute floaty text-3xl" style="top:18%; left:4%; --fdur:5.5s; --fdelay:-2.6s;">🍀</span>
+    <span class="absolute floaty text-3xl" style="top:33%; left:93%; --fdur:6.5s; --fdelay:-3.8s;">🌸</span>
+    <span class="absolute floaty text-3xl" style="top:52%; left:5%; --fdur:6s; --fdelay:-1.2s;">🧸</span>
+    <span class="absolute floaty text-3xl" style="top:60%; left:93%; --fdur:5.2s; --fdelay:-2.9s;">🐰</span>
+    <span class="absolute floaty text-2xl" style="top:75%; left:4%; --fdur:6.8s; --fdelay:-4.6s;">🍬</span>
+    <span class="absolute floaty text-3xl" style="top:88%; left:10%; --fdur:7.2s; --fdelay:-2.1s;">🧭</span>
+    <span class="absolute floaty text-2xl" style="top:80%; left:90%; --fdur:5.8s; --fdelay:-0.8s;">🫧</span>
+    <span class="absolute floaty text-2xl" style="top:9%; left:70%; --fdur:6.2s; --fdelay:-3.3s;">🦜</span>
+  </div>
+
+  <div class="flex flex-col items-center min-h-screen px-4 py-12 relative z-20">
+    <h2 id="valentineQuestion" class="text-3xl sm:text-4xl font-bold italic text-[#0369a1] text-center leading-snug">
+      ¿Quieres seguir viajando conmigo 6 meses más? ✈️✨
+    </h2>
+
+    <div id="ticketStack" class="relative mt-8 w-full max-w-3xl">
+      <div id="pass"
+        class="stack-anim relative z-20 w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col sm:flex-row">
+      <div id="stampLayer" class="absolute inset-0 pointer-events-none z-30"></div>
+
+      <!-- Cuerpo del pase -->
+      <div class="p-6 flex-1 flex flex-col gap-4 relative z-10">
+        <div class="flex items-center justify-between">
+          <img src="./assets/latam-logo.svg" alt="LATAM Airlines" class="h-8 sm:h-9 w-auto" />
+          <p class="text-right text-[10px] uppercase tracking-widest text-gray-500 leading-relaxed">
+            Tarjeta de Embarque<br>Boarding Pass
+          </p>
+        </div>
+
+        <div class="w-full border-t border-dashed border-gray-200"></div>
+
+        <div class="flex gap-4 items-start">
+          <div class="shrink-0">
+            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Pasajera</p>
+            <div class="rounded-md border-2 border-[#075985]/20 p-0.5 bg-white shadow-sm">
+              <img id="imageDisplay" src="./assets/jerica.png" alt="Foto de pasajera"
+                class="rounded w-20 h-24 object-cover" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-x-6 gap-y-2 flex-1">
+            <div class="col-span-2">
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">Nombre</p>
+              <p class="font-semibold text-[#075985]">JERICA LIMO ⭐</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">Vuelo</p>
+              <p class="font-semibold text-[#075985] font-mono">AMOR-6M</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">Fecha</p>
+              <p class="font-semibold text-[#075985] font-mono">26/10</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">Puerta</p>
+              <p class="font-semibold text-[#075985] font-mono">G7</p>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
+              <p class="font-semibold text-[#075985] font-mono">6A</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-gray-400">De</p>
+            <p class="text-3xl font-bold text-[#075985] font-mono">M1</p>
+            <p class="text-[10px] text-gray-500">NUESTRO PRIMER MES</p>
+          </div>
+          <div class="flex-1 relative h-6 border-t-2 border-dotted border-gray-300 self-center mt-2">
+            <span class="absolute -top-[14px] left-1/2 -translate-x-1/2 text-xl">✈️</span>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-gray-400">A</p>
+            <p class="text-3xl font-bold text-[#075985] font-mono">LIM</p>
+            <p class="text-[10px] text-gray-500">LIMA ✨</p>
+          </div>
+        </div>
+
+        <p id="statusLine" class="text-[#0284c7] font-semibold italic text-sm min-h-[20px]">
+          Esperando confirmación de la pasajera... 🕐
+        </p>
+
+        <div class="flex gap-4 items-center flex-wrap" id="responseButtons">
+          <button id="yesButton"
+            class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[16px] font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-[#15803d] min-h-12 min-w-[170px] px-4 py-2 bg-[#16a34a] text-white transition">
+            ✓ CONFIRMAR VUELO
+          </button>
+          <button id="noButton"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[13px] font-semibold uppercase tracking-wider transition hover:bg-[#0284c7]/10 border-2 border-[#0284c7] text-[#0284c7] h-12 w-auto px-4 py-2 bg-white">
+            ✗ DENEGAR
+          </button>
+        </div>
+      </div>
+
+      <!-- Perforación -->
+      <div class="hidden sm:block w-0 self-stretch border-l-2 border-dashed border-gray-300 shrink-0 relative z-10"></div>
+      <div class="sm:hidden w-full border-t-2 border-dashed border-gray-300"></div>
+
+      <!-- Talón -->
+      <div class="w-full sm:w-44 p-5 flex flex-col items-center gap-3 bg-gray-50 shrink-0 relative z-10">
+        <p class="text-[10px] tracking-widest text-gray-500 font-mono text-center uppercase">AMOR-6M · LIM</p>
+        <div class="text-center">
+          <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
+          <p class="text-2xl font-bold text-[#075985]">6A</p>
+        </div>
+        <p class="text-[10px] uppercase tracking-widest text-gray-400">Grupo 1</p>
+        <div class="barcode h-16 w-full"></div>
+        <p id="stubLabel" class="text-[10px] font-mono text-gray-500 text-center">*AMOR-6M/6A/2610*</p>
+      </div>
+      </div>
+
+      <!-- Pase del copiloto (se esconde detrás, girando con cada Rechazado) -->
+      <div id="passCo"
+        class="stack-anim absolute inset-0 z-0 w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col sm:flex-row">
+        <div class="absolute top-3 right-3 z-20 -rotate-6 border-2 border-[#075985] text-[#075985] rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider opacity-70">Pre-Check ✔</div>
+        <div class="p-6 flex-1 flex flex-col gap-4 relative z-10">
+          <div class="flex items-center justify-between">
+            <img src="./assets/latam-logo.svg" alt="LATAM Airlines" class="h-8 sm:h-9 w-auto" />
+            <p class="text-right text-[10px] uppercase tracking-widest text-gray-500 leading-relaxed">
+              Tarjeta de Embarque<br>Boarding Pass
+            </p>
+          </div>
+          <div class="w-full border-t border-dashed border-gray-200"></div>
+          <div class="flex gap-4 items-start">
+            <div class="shrink-0">
+              <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Pasajero</p>
+              <div class="rounded-md border-2 border-[#075985]/20 p-0.5 bg-white shadow-sm">
+                <img id="coImage" src="./assets/cristopher.png" alt="Foto graciosa del copiloto"
+                  class="rounded w-20 h-24 object-cover" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 flex-1">
+              <div class="col-span-2">
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Nombre</p>
+                <p class="font-semibold text-[#075985]">CRISTOPHER BARRENECHEA ⭐</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Vuelo</p>
+                <p class="font-semibold text-[#075985] font-mono">AMOR-6M</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Fecha</p>
+                <p class="font-semibold text-[#075985] font-mono">26/10</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Puerta</p>
+                <p class="font-semibold text-[#075985] font-mono">G7</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
+                <p class="font-semibold text-[#075985] font-mono">6B</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">De</p>
+              <p class="text-3xl font-bold text-[#075985] font-mono">M1</p>
+              <p class="text-[10px] text-gray-500">NUESTRO PRIMER MES</p>
+            </div>
+            <div class="flex-1 relative h-6 border-t-2 border-dotted border-gray-300 self-center mt-2">
+              <span class="absolute -top-[14px] left-1/2 -translate-x-1/2 text-xl">✈️</span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">A</p>
+              <p class="text-3xl font-bold text-[#075985] font-mono">LIM</p>
+              <p class="text-[10px] text-gray-500">LIMA ✨</p>
+            </div>
+          </div>
+          <p class="text-[#0284c7] font-semibold italic text-sm min-h-[20px]">
+            Copiloto confirmado desde el día 1 ✨
+          </p>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Equipaje: la risa · Motivo: el amor</p>
+        </div>
+        <div class="hidden sm:block w-0 self-stretch border-l-2 border-dashed border-gray-300 shrink-0 relative z-10"></div>
+        <div class="sm:hidden w-full border-t-2 border-dashed border-gray-300"></div>
+        <div class="w-full sm:w-44 p-5 flex flex-col items-center gap-3 bg-gray-50 shrink-0 relative z-10">
+          <p class="text-[10px] tracking-widest text-gray-500 font-mono text-center uppercase">AMOR-6M · LIM</p>
+          <div class="text-center">
+            <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
+            <p class="text-2xl font-bold text-[#075985]">6B</p>
+          </div>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400">Grupo 1 · Copiloto</p>
+          <div class="barcode h-16 w-full"></div>
+          <p id="stubLabelCo" class="text-[10px] font-mono text-gray-500 text-center">*AMOR-6M/6B/2610*</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="photoSection" class="hidden w-full max-w-4xl mt-16 relative z-20">
+      <h3 class="reveal-item text-2xl font-bold text-[#0369a1] text-center mb-1">6 meses de vuelos ✈️</h3>
+      <p class="text-center text-sm text-gray-600 mb-8">Nuestro itinerario hasta ahora, destino por destino</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Mes 1 -->
+        <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 1</p>
+          <img src="./assets/mes1.jpg" alt="Mes 1" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
+        </div>
+        <!-- Mes 2 -->
+        <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 2</p>
+          <img src="./assets/mes2.jpg" alt="Mes 2" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
+        </div>
+        <!-- Mes 3 – dos fotos -->
+        <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 3</p>
+          <div class="flex gap-2">
+            <img src="./assets/mes3a.jpg" alt="Mes 3 – foto 1" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+            <img src="./assets/mes3b.jpg" alt="Mes 3 – foto 2" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+          </div>
+        </div>
+        <!-- Mes 4 -->
+        <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 4</p>
+          <img src="./assets/mes4.jpg" alt="Mes 4" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
+        </div>
+        <!-- Mes 5 -->
+        <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 5</p>
+          <img src="./assets/mes5.jpg" alt="Mes 5" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
+        </div>
+        <!-- Mes 6 – dos fotos -->
+        <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 6</p>
+          <div class="flex gap-2">
+            <img src="./assets/mes6a.jpg" alt="Mes 6 – foto 1" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+            <img src="./assets/mes6b.jpg" alt="Mes 6 – foto 2" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mapSection" class="hidden w-full max-w-3xl mt-14 relative z-20">
+      <h3 class="reveal-item text-2xl font-bold text-[#0369a1] text-center mb-1">Próximas escalas: maravillas del mundo 🗺️</h3>
+      <p class="reveal-item text-center text-sm text-gray-600 mb-6">Toda nuestra lista de destinos por conquistar ✈️</p>
+      <div class="reveal-item relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-sky-100">
+        <img src="./assets/world-map.svg" alt="Mapa del mundo con las maravillas marcadas"
+          class="w-full h-auto block select-none" draggable="false" />
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:29.8%; top:57.3%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Machu
+            Picchu 🏔️</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:53.5%; top:26.7%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Coliseo
+            · Roma 🏟️</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:82.4%; top:27.5%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Gran
+            Muralla 🧱</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:59.8%; top:33.1%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Petra
+            🏛️</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:25.4%; top:38.5%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Chichén
+            Itzá 🔺</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:38.0%; top:62.7%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Cristo
+            Redentor 🗿</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:71.7%; top:34.9%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Taj
+            Mahal 🕌</span>
+        </div>
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:58.6%; top:29.5%;">
+          <span class="text-lg sm:text-xl">📍</span>
+          <span
+            class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Giza
+            🐪 (honoraria)</span>
+        </div>
+      </div>
+      <p class="reveal-item text-center text-[10px] text-gray-500 mt-3">*Giza queda fuera de la lista oficial, pero para mí es la
+        octava maravilla :)</p>
+    </section>
+
+    <div id="banner" class="hidden w-full max-w-3xl mt-14 relative z-20 overflow-hidden rounded-3xl bg-gradient-to-r from-sky-200 via-emerald-100 to-green-200 border-2 border-white shadow-xl px-6 py-9 text-center">
+      <p class="text-[10px] uppercase tracking-[0.35em] text-[#0369a1] font-semibold mb-3">
+        Nueva ruta abierta · Vuelo AMOR-6M → ∞
+      </p>
+      <p class="text-2xl sm:text-4xl font-bold text-[#075985] leading-snug bounce2">
+        Te amo mi vida, seguiremos volando juntos :3
+      </p>
+      <p class="reveal-item mt-4 text-2xl tracking-[0.3em]">✈️ 🌍 ✈️ 🛫 ✈️</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const imageDisplay = document.getElementById('imageDisplay');
+    const valentineQuestion = document.getElementById('valentineQuestion');
+    const responseButtons = document.getElementById('responseButtons');
+    const statusLine = document.getElementById('statusLine');
+    const stubLabel = document.getElementById('stubLabel');
+    const stampLayer = document.getElementById('stampLayer');
+    const stack = document.getElementById('ticketStack');
+    const pass = document.getElementById('pass');
+    const passCo = document.getElementById('passCo');
+    const photoSection = document.getElementById('photoSection');
+    const mapSection = document.getElementById('mapSection');
+    const banner = document.getElementById('banner');
+    const fireConfetti = window.confetti || (() => {});
+
+    function loveConfetti() {
+      try {
+        if (typeof window.confetti === 'function') {
+          window.confetti({ particleColors: ['#16a34a', '#38bdf8', '#bbf7d0', '#e0f2fe'] });
+        }
+      } catch (e) { }
+    }
+
+    function setupScrollReveal() {
+      ['photoSection', 'mapSection', 'banner'].forEach(id => {
+        const sec = document.getElementById(id);
+        [...sec.querySelectorAll('.reveal-item')].forEach((el, i) => {
+          el.style.transitionDelay = `${i * 110}ms`;
+        });
+      });
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(en => {
+            if (en.isIntersecting) {
+              en.target.classList.add('show');
+              obs.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal-item').forEach(el => obs.observe(el));
+      } else {
+        document.querySelectorAll('.reveal-item').forEach(el => el.classList.add('show'));
+      }
+    }
+
+    let noClickCount = 0;
+    let confirmed = false;
+    let swapping = false;
+    let frontEl = pass;
+    let backEl = passCo;
+
+    const ROT_PER_PRESS = 3;
+    const TY_PER_PRESS = 6;
+
+
+    const teasingMessages = [
+      "Esta q despega confirma uwu",
+      "Hay playita y buffet… di q si siiiii???",
+      "Pedimos un yapecredito para sacar el viaje pero vamos yeiii",
+      "Todooo al verdeee"
+    ];
+    const stampSpots = [
+      { top: "16%", left: "40%", r: "-12deg" },
+      { top: "42%", left: "62%", r: "9deg" },
+      { top: "58%", left: "28%", r: "-7deg" },
+      { top: "28%", left: "55%", r: "14deg" },
+      { top: "62%", left: "56%", r: "-10deg" }
+    ];
+
+    function setBackState(el, presses) {
+      el.style.transform = `translateY(${presses * TY_PER_PRESS}px) rotate(${presses * ROT_PER_PRESS}deg)`;
+    }
+
+    function addRejectedStamp(i) {
+      const spot = stampSpots[i];
+      const stamp = document.createElement('div');
+      stamp.className = "stamp absolute border-[3px] border-red-600 text-red-600 rounded-md px-3 py-1 font-bold uppercase tracking-widest select-none";
+      stamp.style.cssText = `--r:${spot.r}; top:${spot.top}; left:${spot.left};`;
+      stamp.textContent = "Rechazado ✗";
+      stampLayer.appendChild(stamp);
+    }
+
+    noButton.addEventListener('click', function () {
+      if (noClickCount < 4) {
+        statusLine.textContent = teasingMessages[noClickCount];
+        addRejectedStamp(noClickCount);
+        noClickCount++;
+        setBackState(backEl, noClickCount);
+      }
+    });
+
+    yesButton.addEventListener('click', () => {
+      if (confirmed) return;
+      confirmed = true;
+      valentineQuestion.textContent = "¡Nos vamos de aventura! ✈️✨";
+      statusLine.textContent = "Check-in completo ✔ Psst... clic en la esquina de abajo 😉";
+      stubLabel.textContent = "*VALIDO:6MESESMAS*";
+      responseButtons.style.display = 'none';
+      addConfirmedStamp();
+      setBackState(backEl, Math.max(noClickCount, 5));
+      backEl.style.cursor = 'pointer';
+      fireConfetti();
+      loveConfetti();
+      [photoSection, mapSection, banner].forEach(s => s.classList.remove('hidden'));
+      setupScrollReveal();
+    });
+
+    function addConfirmedStamp() {
+      const stamp = document.createElement('div');
+      stamp.className = "stamp absolute border-4 border-[#16a34a] text-[#16a34a] rounded-lg bg-white/70 px-6 py-3 font-bold uppercase tracking-widest select-none text-center text-2xl md:text-3xl shadow-lg";
+      stamp.style.cssText = "--r:-12deg; --s:1; --o:1; top:50%; left:50%;";
+      stamp.textContent = "Embarque Confirmado 🛫";
+      stampLayer.appendChild(stamp);
+    }
+
+    pass.addEventListener('click', () => { if (backEl === pass) swap(); });
+    passCo.addEventListener('click', () => { if (backEl === passCo) swap(); });
+
+    function swap() {
+      if (swapping || !confirmed) return;
+      swapping = true;
+      const f = frontEl, b = backEl;
+
+      if (f.style.position !== 'absolute') {
+        stack.style.height = `${f.offsetHeight}px`;
+        f.style.position = 'absolute';
+        f.style.top = '0';
+        f.style.left = '0';
+        f.style.right = '0';
+      }
+
+      f.classList.add('fly-away');
+      b.style.transform = 'translateY(0px) rotate(0deg)';
+      b.style.zIndex = '30';
+      b.style.cursor = 'default';
+
+      setTimeout(() => {
+        f.classList.remove('fly-away');
+        f.style.transition = 'none';
+        f.style.opacity = '1';
+        f.style.zIndex = '0';
+        f.style.transform = `translateY(${noClickCount * TY_PER_PRESS}px) rotate(${noClickCount * ROT_PER_PRESS}deg)`;
+        void f.offsetWidth;
+        f.style.transition = '';
+        b.style.zIndex = '20';
+
+        frontEl = b;
+        backEl = f;
+        backEl.style.cursor = 'pointer';
+        swapping = false;
+      }, 580);
+    }
+  </script>
+</body>
+
+</html>
