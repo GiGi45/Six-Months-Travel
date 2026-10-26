@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6 Meses Viajando Juntos ✈️ · Vuelo AMOR-6M</title>
+  <title>6 Meses Viajando Juntos ✈️ · Vuelo 6M</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .gradient-background {
@@ -194,105 +194,108 @@
     <div id="ticketStack" class="relative mt-8 w-full max-w-3xl">
       <div id="pass"
         class="stack-anim relative z-20 w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col sm:flex-row">
-      <div id="stampLayer" class="absolute inset-0 pointer-events-none z-30"></div>
+        <div id="stampLayer" class="absolute inset-0 pointer-events-none z-30"></div>
 
-      <!-- Cuerpo del pase -->
-      <div class="p-6 flex-1 flex flex-col gap-4 relative z-10">
-        <div class="flex items-center justify-between">
-          <img src="./assets/latam-logo.svg" alt="LATAM Airlines" class="h-8 sm:h-9 w-auto" />
-          <p class="text-right text-[10px] uppercase tracking-widest text-gray-500 leading-relaxed">
-            Tarjeta de Embarque<br>Boarding Pass
+        <!-- Cuerpo del pase -->
+        <div class="p-6 flex-1 flex flex-col gap-4 relative z-10">
+          <div class="flex items-center justify-between">
+            <img src="./assets/latam-logo.svg" alt="LATAM Airlines" class="h-8 sm:h-9 w-auto" />
+            <p class="text-right text-[10px] uppercase tracking-widest text-gray-500 leading-relaxed">
+              Tarjeta de Embarque<br>Boarding Pass
+            </p>
+          </div>
+
+          <div class="w-full border-t border-dashed border-gray-200"></div>
+
+          <div class="flex gap-4 items-start">
+            <div class="shrink-0">
+              <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Pasajera</p>
+              <div class="rounded-md border-2 border-[#075985]/20 p-0.5 bg-white shadow-sm">
+                <img id="imageDisplay" src="./assets/jerica.png" alt="Foto de pasajera"
+                  class="rounded w-20 h-24 object-cover" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-6 gap-y-2 flex-1">
+              <div class="col-span-2">
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Nombre</p>
+                <p class="font-semibold text-[#075985]">JERICA LIMO ⭐</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Vuelo</p>
+                <p class="font-semibold text-[#075985] font-mono">6M</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Fecha</p>
+                <p class="font-semibold text-[#075985] font-mono">26/10</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Puerta</p>
+                <p class="font-semibold text-[#075985] font-mono">G7</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
+                <p class="font-semibold text-[#075985] font-mono">6A</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">De</p>
+              <p class="text-3xl font-bold text-[#075985] font-mono">M1</p>
+              <p class="text-[10px] text-gray-500">NUESTRO PRIMER MES</p>
+            </div>
+            <div class="flex-1 relative h-6 border-t-2 border-dotted border-gray-300 self-center mt-2">
+              <span class="absolute -top-[14px] left-1/2 -translate-x-1/2 text-xl">✈️</span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-widest text-gray-400">A</p>
+              <p class="text-3xl font-bold text-[#075985] font-mono">LIM</p>
+              <p class="text-[10px] text-gray-500">LIMA ✨</p>
+            </div>
+          </div>
+
+          <p id="statusLine" class="text-[#0284c7] font-semibold italic text-sm min-h-[20px]">
+            Esperando confirmación de la pasajera... 🕐
           </p>
-        </div>
 
-        <div class="w-full border-t border-dashed border-gray-200"></div>
-
-        <div class="flex gap-4 items-start">
-          <div class="shrink-0">
-            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Pasajera</p>
-            <div class="rounded-md border-2 border-[#075985]/20 p-0.5 bg-white shadow-sm">
-              <img id="imageDisplay" src="./assets/jerica.png" alt="Foto de pasajera"
-                class="rounded w-20 h-24 object-cover" />
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-x-6 gap-y-2 flex-1">
-            <div class="col-span-2">
-              <p class="text-[10px] uppercase tracking-widest text-gray-400">Nombre</p>
-              <p class="font-semibold text-[#075985]">JERICA LIMO ⭐</p>
-            </div>
-            <div>
-              <p class="text-[10px] uppercase tracking-widest text-gray-400">Vuelo</p>
-              <p class="font-semibold text-[#075985] font-mono">AMOR-6M</p>
-            </div>
-            <div>
-              <p class="text-[10px] uppercase tracking-widest text-gray-400">Fecha</p>
-              <p class="font-semibold text-[#075985] font-mono">26/10</p>
-            </div>
-            <div>
-              <p class="text-[10px] uppercase tracking-widest text-gray-400">Puerta</p>
-              <p class="font-semibold text-[#075985] font-mono">G7</p>
-            </div>
-            <div>
-              <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
-              <p class="font-semibold text-[#075985] font-mono">6A</p>
-            </div>
+          <div class="flex gap-4 items-center flex-wrap" id="responseButtons">
+            <button id="yesButton"
+              class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[16px] font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-[#15803d] min-h-12 min-w-[170px] px-4 py-2 bg-[#16a34a] text-white transition">
+              ✓ CONFIRMAR VUELO
+            </button>
+            <button id="noButton"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[13px] font-semibold uppercase tracking-wider transition hover:bg-[#0284c7]/10 border-2 border-[#0284c7] text-[#0284c7] h-12 w-auto px-4 py-2 bg-white">
+              ✗ DENEGAR
+            </button>
           </div>
         </div>
 
-        <div class="flex items-center gap-4">
-          <div>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400">De</p>
-            <p class="text-3xl font-bold text-[#075985] font-mono">M1</p>
-            <p class="text-[10px] text-gray-500">NUESTRO PRIMER MES</p>
-          </div>
-          <div class="flex-1 relative h-6 border-t-2 border-dotted border-gray-300 self-center mt-2">
-            <span class="absolute -top-[14px] left-1/2 -translate-x-1/2 text-xl">✈️</span>
-          </div>
-          <div>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400">A</p>
-            <p class="text-3xl font-bold text-[#075985] font-mono">LIM</p>
-            <p class="text-[10px] text-gray-500">LIMA ✨</p>
-          </div>
+        <!-- Perforación -->
+        <div class="hidden sm:block w-0 self-stretch border-l-2 border-dashed border-gray-300 shrink-0 relative z-10">
         </div>
+        <div class="sm:hidden w-full border-t-2 border-dashed border-gray-300"></div>
 
-        <p id="statusLine" class="text-[#0284c7] font-semibold italic text-sm min-h-[20px]">
-          Esperando confirmación de la pasajera... 🕐
-        </p>
-
-        <div class="flex gap-4 items-center flex-wrap" id="responseButtons">
-          <button id="yesButton"
-            class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[16px] font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-[#15803d] min-h-12 min-w-[170px] px-4 py-2 bg-[#16a34a] text-white transition">
-            ✓ CONFIRMAR VUELO
-          </button>
-          <button id="noButton"
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[13px] font-semibold uppercase tracking-wider transition hover:bg-[#0284c7]/10 border-2 border-[#0284c7] text-[#0284c7] h-12 w-auto px-4 py-2 bg-white">
-            ✗ DENEGAR
-          </button>
+        <!-- Talón -->
+        <div class="w-full sm:w-44 p-5 flex flex-col items-center gap-3 bg-gray-50 shrink-0 relative z-10">
+          <p class="text-[10px] tracking-widest text-gray-500 font-mono text-center uppercase">6M · LIM</p>
+          <div class="text-center">
+            <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
+            <p class="text-2xl font-bold text-[#075985]">6A</p>
+          </div>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400">Grupo 1</p>
+          <div class="barcode h-16 w-full"></div>
+          <p id="stubLabel" class="text-[10px] font-mono text-gray-500 text-center">*6M/6A/2610*</p>
         </div>
-      </div>
-
-      <!-- Perforación -->
-      <div class="hidden sm:block w-0 self-stretch border-l-2 border-dashed border-gray-300 shrink-0 relative z-10"></div>
-      <div class="sm:hidden w-full border-t-2 border-dashed border-gray-300"></div>
-
-      <!-- Talón -->
-      <div class="w-full sm:w-44 p-5 flex flex-col items-center gap-3 bg-gray-50 shrink-0 relative z-10">
-        <p class="text-[10px] tracking-widest text-gray-500 font-mono text-center uppercase">AMOR-6M · LIM</p>
-        <div class="text-center">
-          <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
-          <p class="text-2xl font-bold text-[#075985]">6A</p>
-        </div>
-        <p class="text-[10px] uppercase tracking-widest text-gray-400">Grupo 1</p>
-        <div class="barcode h-16 w-full"></div>
-        <p id="stubLabel" class="text-[10px] font-mono text-gray-500 text-center">*AMOR-6M/6A/2610*</p>
-      </div>
       </div>
 
       <!-- Pase del copiloto (se esconde detrás, girando con cada Rechazado) -->
       <div id="passCo"
         class="stack-anim absolute inset-0 z-0 w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col sm:flex-row">
-        <div class="absolute top-3 right-3 z-20 -rotate-6 border-2 border-[#075985] text-[#075985] rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider opacity-70">Pre-Check ✔</div>
+        <div
+          class="absolute top-3 right-3 z-20 -rotate-6 border-2 border-[#075985] text-[#075985] rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider opacity-70">
+          Pre-Check ✔</div>
         <div class="p-6 flex-1 flex flex-col gap-4 relative z-10">
           <div class="flex items-center justify-between">
             <img src="./assets/latam-logo.svg" alt="LATAM Airlines" class="h-8 sm:h-9 w-auto" />
@@ -316,7 +319,7 @@
               </div>
               <div>
                 <p class="text-[10px] uppercase tracking-widest text-gray-400">Vuelo</p>
-                <p class="font-semibold text-[#075985] font-mono">AMOR-6M</p>
+                <p class="font-semibold text-[#075985] font-mono">6M</p>
               </div>
               <div>
                 <p class="text-[10px] uppercase tracking-widest text-gray-400">Fecha</p>
@@ -352,17 +355,18 @@
           </p>
           <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-auto">Equipaje: la risa · Motivo: el amor</p>
         </div>
-        <div class="hidden sm:block w-0 self-stretch border-l-2 border-dashed border-gray-300 shrink-0 relative z-10"></div>
+        <div class="hidden sm:block w-0 self-stretch border-l-2 border-dashed border-gray-300 shrink-0 relative z-10">
+        </div>
         <div class="sm:hidden w-full border-t-2 border-dashed border-gray-300"></div>
         <div class="w-full sm:w-44 p-5 flex flex-col items-center gap-3 bg-gray-50 shrink-0 relative z-10">
-          <p class="text-[10px] tracking-widest text-gray-500 font-mono text-center uppercase">AMOR-6M · LIM</p>
+          <p class="text-[10px] tracking-widest text-gray-500 font-mono text-center uppercase">6M · LIM</p>
           <div class="text-center">
             <p class="text-[10px] uppercase tracking-widest text-gray-400">Asiento</p>
             <p class="text-2xl font-bold text-[#075985]">6B</p>
           </div>
           <p class="text-[10px] uppercase tracking-widest text-gray-400">Grupo 1 · Copiloto</p>
           <div class="barcode h-16 w-full"></div>
-          <p id="stubLabelCo" class="text-[10px] font-mono text-gray-500 text-center">*AMOR-6M/6B/2610*</p>
+          <p id="stubLabelCo" class="text-[10px] font-mono text-gray-500 text-center">*6M/6B/2610*</p>
         </div>
       </div>
     </div>
@@ -373,107 +377,121 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <!-- Mes 1 -->
         <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
-          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 1</p>
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo 6M · Mes 1</p>
           <img src="./assets/mes1.jpg" alt="Mes 1" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
         </div>
         <!-- Mes 2 -->
         <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
-          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 2</p>
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo 6M · Mes 2</p>
           <img src="./assets/mes2.jpg" alt="Mes 2" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
         </div>
         <!-- Mes 3 – dos fotos -->
         <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
-          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 3</p>
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo 6M · Mes 3</p>
           <div class="flex gap-2">
-            <img src="./assets/mes3a.jpg" alt="Mes 3 – foto 1" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
-            <img src="./assets/mes3b.jpg" alt="Mes 3 – foto 2" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+            <img src="./assets/mes3_1.jpg" alt="Mes 3 – foto 1"
+              class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+            <img src="./assets/Mes3_2.png" alt="Mes 3 – foto 2"
+              class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
           </div>
         </div>
         <!-- Mes 4 -->
         <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
-          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 4</p>
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo 6M · Mes 4</p>
           <img src="./assets/mes4.jpg" alt="Mes 4" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
         </div>
         <!-- Mes 5 -->
         <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
-          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 5</p>
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo 6M · Mes 5</p>
           <img src="./assets/mes5.jpg" alt="Mes 5" class="w-full rounded-lg object-cover aspect-video shadow-sm" />
         </div>
         <!-- Mes 6 – dos fotos -->
         <div class="reveal-item rounded-xl bg-white/90 shadow-md border-l-4 border-[#075985] p-5">
-          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo AMOR-6M · Mes 6</p>
+          <p class="text-[10px] uppercase tracking-widest text-[#0284c7] font-semibold mb-3">Vuelo 6M · Mes 6</p>
           <div class="flex gap-2">
-            <img src="./assets/mes6a.jpg" alt="Mes 6 – foto 1" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
-            <img src="./assets/mes6b.jpg" alt="Mes 6 – foto 2" class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+            <img src="./assets/Mes6_1.png" alt="Mes 6 – foto 1"
+              class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
+            <img src="./assets/Mes6_2.png" alt="Mes 6 – foto 2"
+              class="w-1/2 rounded-lg object-cover aspect-square shadow-sm" />
           </div>
         </div>
       </div>
     </section>
 
     <section id="mapSection" class="hidden w-full max-w-3xl mt-14 relative z-20">
-      <h3 class="reveal-item text-2xl font-bold text-[#0369a1] text-center mb-1">Próximas escalas: maravillas del mundo 🗺️</h3>
+      <h3 class="reveal-item text-2xl font-bold text-[#0369a1] text-center mb-1">Próximas escalas: maravillas del mundo
+        🗺️</h3>
       <p class="reveal-item text-center text-sm text-gray-600 mb-6">Toda nuestra lista de destinos por conquistar ✈️</p>
       <div class="reveal-item relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-sky-100">
         <img src="./assets/world-map.svg" alt="Mapa del mundo con las maravillas marcadas"
           class="w-full h-auto block select-none" draggable="false" />
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:29.8%; top:57.3%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:29.8%; top:57.3%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Machu
             Picchu 🏔️</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:53.5%; top:26.7%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:53.5%; top:26.7%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Coliseo
             · Roma 🏟️</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:82.4%; top:27.5%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:82.4%; top:27.5%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Gran
             Muralla 🧱</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:59.8%; top:33.1%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:59.8%; top:33.1%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Petra
             🏛️</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:25.4%; top:38.5%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:25.4%; top:38.5%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Chichén
             Itzá 🔺</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:38.0%; top:62.7%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:38.0%; top:62.7%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Cristo
             Redentor 🗿</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:71.7%; top:34.9%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:71.7%; top:34.9%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Taj
             Mahal 🕌</span>
         </div>
-        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style="left:58.6%; top:29.5%;">
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
+          style="left:58.6%; top:29.5%;">
           <span class="text-lg sm:text-xl">📍</span>
           <span
             class="px-1.5 py-0.5 rounded bg-white/90 text-[8px] sm:text-[10px] font-semibold text-[#0369a1] border border-sky-200 whitespace-nowrap shadow-sm">Giza
             🐪 (honoraria)</span>
         </div>
       </div>
-      <p class="reveal-item text-center text-[10px] text-gray-500 mt-3">*Giza queda fuera de la lista oficial, pero para mí es la
-        octava maravilla :)</p>
+      <p class="reveal-item text-center text-[10px] text-gray-500 mt-3">*Iremos a visitarlas todas yeiii PD. aun asi sea
+        caminando xd</p>
     </section>
 
-    <div id="banner" class="hidden w-full max-w-3xl mt-14 relative z-20 overflow-hidden rounded-3xl bg-gradient-to-r from-sky-200 via-emerald-100 to-green-200 border-2 border-white shadow-xl px-6 py-9 text-center">
+    <div id="banner"
+      class="hidden w-full max-w-3xl mt-14 relative z-20 overflow-hidden rounded-3xl bg-gradient-to-r from-sky-200 via-emerald-100 to-green-200 border-2 border-white shadow-xl px-6 py-9 text-center">
       <p class="text-[10px] uppercase tracking-[0.35em] text-[#0369a1] font-semibold mb-3">
-        Nueva ruta abierta · Vuelo AMOR-6M → ∞
+        Nueva ruta abierta · Vuelo 6M → ∞
       </p>
-      <p class="text-2xl sm:text-4xl font-bold text-[#075985] leading-snug bounce2">
+      <p class="text-2xl sm:text-4xl font-bold text-[#075985] leading-snug">
         Te amo mi vida, seguiremos volando juntos :3
       </p>
       <p class="reveal-item mt-4 text-2xl tracking-[0.3em]">✈️ 🌍 ✈️ 🛫 ✈️</p>
@@ -496,7 +514,7 @@
     const photoSection = document.getElementById('photoSection');
     const mapSection = document.getElementById('mapSection');
     const banner = document.getElementById('banner');
-    const fireConfetti = window.confetti || (() => {});
+    const fireConfetti = window.confetti || (() => { });
 
     function loveConfetti() {
       try {
